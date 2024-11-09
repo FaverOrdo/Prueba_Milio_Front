@@ -1,0 +1,111 @@
+/* Estilos para el navbar de escritorio */
+/* Fondo unificado para el navbar */
+/* Fondo unificado para el navbar */
+.desktop-navbar {
+  display: flex;
+  background-color: #f5f5f5; /* Mismo color que el cuerpo de la página */
+  padding-top: 0;
+  padding-bottom: 0;
+  box-shadow: none; /* Elimina sombras */
+  border: none; /* Elimina bordes */
+}
+
+/* Fondo para el cuerpo de la página */
+body {
+  background-color: #f5f5f5; /* Mismo color que el navbar */
+  margin: 0;
+  padding: 0;
+}
+
+
+.desktop-navbar .navbar-brand img {
+  width: 50px;
+  height: 50px;
+}
+
+.desktop-navbar .nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  margin-right: 1rem;
+  position: relative;
+  text-decoration: none;
+  font-size: 16px; /* Ajusta el tamaño de la fuente aquí */
+}
+
+.desktop-navbar .nav-link:hover {
+  color: #00b894 !important;
+}
+
+.desktop-navbar .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #61E27D;
+}
+
+/* Ocultar el navbar de escritorio en dispositivos móviles */
+@media (max-width: 576px) {
+  .desktop-navbar {
+    display: none; /* Oculta el navbar de escritorio en móviles */
+  }
+}
+
+/* Estilos para la barra de navegación inferior solo en móviles */
+.bottom-navbar {
+  display: none; /* Oculta el menú inferior en pantallas grandes */
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  background-color: #61E27D;
+  padding: 25px 0; /* Aumenta el padding para que sea más alto */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  z-index: 1000;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottom-navbar a {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.nav-item {
+  text-align: center;
+  flex: 1;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.nav-link .material-icons {
+  font-size: 1.8rem;
+}
+
+/* Mostrar la barra de navegación inferior solo en móviles */
+@media (max-width: 576px) {
+  .bottom-navbar {
+    display: flex; /* Solo muestra el navbar inferior en móviles */
+  }
+}

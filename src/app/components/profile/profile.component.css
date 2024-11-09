@@ -1,0 +1,85 @@
+/* Estilos generales del contenedor de perfil */
+.profile-container {
+  width: 684px;
+  height: 684px;
+  margin: auto;
+  padding: 40px; /* Aumenta el padding para ajustarse al espacio del diseño */
+  background-color: #FBFBFB;
+  border-radius: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin-top: 50px; 
+}
+
+/* Encabezado del perfil con icono y título */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+  gap: 10px; /* Espacio entre el ícono y el texto */
+  margin-bottom: 15px;
+  transform: translateX(-35px);
+}
+
+.profile-header h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 8px;
+  transform: translate(70px,-50px);
+  
+}
+
+/* Imagen circular de perfil */
+.profile-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  transform: translateY(-45px);
+  
+}
+
+/* Botones de opciones del perfil */
+.profile-options {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.profile-option {
+  display: flex; /* Alinea ícono y texto en fila */
+  align-items: center; /* Centra verticalmente ícono y texto */
+  justify-content: start; /* Alinea el contenido a la izquierda */
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 25px 10px; /* Aumenta padding para un diseño más cómodo */
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  font-size: 1.2em;
+}
+
+.profile-option:hover {
+  background-color: #f0f0f0;
+  
+}
+
+.profile-option img,
+.profile-option span {
+  margin-right: 200px; /* Incrementa el espacio entre ícono y texto */
+  margin-left: 20px;
+  width: 20px; /* Ajusta el tamaño según necesites */
+  height: 20px;
+}
+
+.icon-image {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px; /* Incrementa el espacio entre ícono y texto */
+}

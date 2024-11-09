@@ -1,0 +1,76 @@
+<!-- Superposición de fondo con desenfoque -->
+<div *ngIf="showBlurOverlay" class="background-blur-overlay"></div>
+
+<!-- Contenedor del modal del carrito -->
+<div class="cart-container-horizontal">
+  <!-- Cart Items Section -->
+  <div class="cart-products">
+    <div class="cart-header">
+      <!-- Botón de retroceso con SVG de flecha -->
+      <button class="back-button" (click)="goBack()">
+        <!-- SVG de la flecha que apunta a la izquierda -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6L9 12L15 18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Nuevo contenedor para centrar el título con el icono de bolsa -->
+      <div class="cart-title-container">
+        <h2 class="cart-title">
+          <!-- SVG del ícono de la bolsa -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 7H18C19.1 7 20 7.9 20 9V20C20 21.1 19.1 22 18 22H6C4.9 22 4 21.1 4 20V9C4 7.9 4.9 7 6 7Z" 
+                  stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 7V5C8 3.34315 9.34315 2 11 2H13C14.6569 2 16 3.34315 16 5V7" 
+                  stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          MiBolsa
+        </h2>
+      </div>
+
+      <!-- Botón de cerrar con SVG de "X" -->
+      <button class="close-button" (click)="closeCart()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 6L18 18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Productos en el carrito (sin cambios) -->
+    <div *ngFor="let item of cartItems; let i = index" class="cart-product">
+      <img [src]="item.image" alt="{{ item.name }}" class="product-image">
+      <div class="product-info">
+        <p class="product-name">{{ item.name }}</p>
+        <p class="product-details">{{ item.details }}</p>
+        <div class="product-price-quantity">
+          <p class="product-price">${{ item.price }}</p>
+          <div class="quantity-controls">
+            <button class="quantity-button decrement-button" (click)="decrementQuantity(i)">-</button>
+            <span class="quantity">{{ item.quantity }}</span>
+            <button class="quantity-button increment-button" (click)="incrementQuantity(i)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="add-more-products-button" (click)="addMoreProducts()">Agregar más productos </button>
+  </div>
+
+  <!-- Sección de Resumen del Pedido (sin cambios) -->
+  <div class="order-summary">
+    <h2>Información del pedido</h2>
+    <div class="summary-details">
+      <p class="summary-item">
+        <span class="summary-label">🛒 Productos ({{ getTotalItems() }}):</span>
+        <span class="summary-value">${{ totalPrice }}</span>
+      </p>
+      <p class="summary-item">
+        <span class="summary-label">💰 Impuestos:</span>
+        <span class="summary-value">${{ getTaxes() }}</span>
+      </p>
+      <hr>
+      <h3 class="total-section">Total: <span class="total-amount">${{ totalPrice + getTaxes() }}</span></h3>
+    </div>
+    <button class="purchase-button" (click)="openCheckout()">Comprar</button>
+  </div>
+</div>

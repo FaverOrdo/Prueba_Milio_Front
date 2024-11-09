@@ -1,0 +1,114 @@
+/* Superposición de fondo con desenfoque */
+.background-blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo semitransparente */
+  backdrop-filter: blur(10px); /* Aplica desenfoque */
+  -webkit-backdrop-filter: blur(10px); /* Prefijo para compatibilidad */
+  z-index: 100; /* Asegura que esté detrás del modal */
+}
+
+/* Contenedor del modal de confirmación de pago */
+.checkout-modal {
+  position: relative;
+  z-index: 200; /* Coloca el modal encima del fondo */
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px 20px 30px; /* Aumenta el padding inferior */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+/* Botón de cerrar */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Contenedor para el ícono de check con doble borde circular */
+.check-icon-container {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px; /* Centra el ícono y agrega margen inferior */
+  background-color: white; /* Color verde */
+  border-radius: 50%; /* Hace el contenedor circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Círculo adicional */
+.check-icon-container::before {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 2.5px solid #4CAF50; /* Ajuste del grosor del contorno */
+  border-radius: 50%;
+  top: -5px;
+  left: -5px;
+}
+
+/* Ícono de check dentro del círculo */
+.check-icon {
+  font-size: 1.5em;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* Contenido del modal */
+.modal-content {
+  padding-top: 10px;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+p {
+  font-size: 1em;
+  color: #666;
+  margin: 5px 0;
+}
+
+p strong {
+  color: #333;
+}
+
+/* Botón de descarga */
+.download-button {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #fff; /* Fondo blanco */
+  color: black; /* Texto negro */
+  border: 2px solid black; /* Borde negro */
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #f0f0f0; /* Fondo gris claro al hacer hover */
+}

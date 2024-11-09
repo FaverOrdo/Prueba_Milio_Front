@@ -1,0 +1,66 @@
+<div class="container my-5">
+  <!-- Barra de búsqueda -->
+  <div class="search-container">
+    <h2 class="search-title">¿Qué es lo que estás buscando?</h2>
+    <div class="search-bar">
+      <input type="text" class="search-input" placeholder="Introduce una palabra clave..." />
+      <div class="search-icon">
+        <i class="bi bi-search"></i> <!-- Icono de búsqueda -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sección de Categorías -->
+  <div class="categories-container">
+    <h3 class="categories-title">Categorías</h3>
+    <div class="categories">
+      <button class="category-btn">
+        <img src="assets/icons/ropa.png" alt="Icono de Ropa" class="category-icon" /> Ropa
+      </button>
+      <button class="category-btn">
+        <img src="assets/icons/deporte.png" alt="Icono de Deporte" class="category-icon" /> Deporte
+      </button>
+      <button class="category-btn">
+        <img src="assets/icons/juegos.png" alt="Icono de Juegos" class="category-icon" /> Juegos
+      </button>
+      <button class="category-btn">
+        <img src="assets/icons/regalos.png" alt="Icono de Regalos" class="category-icon" /> Regalos
+      </button>
+      <button class="category-btn">
+        <img src="assets/icons/maletas.png" alt="Icono de Maletas" class="category-icon" /> Maletas
+      </button>
+      <button class="category-btn">
+        <img src="assets/icons/navidad.png" alt="Icono de Navidad" class="category-icon" /> Navidad
+      </button>
+      <button class="category-btn">
+        <img src="assets/icons/gafas.png" alt="Icono de Gafas" class="category-icon" /> Gafas
+      </button>
+    </div>
+  </div>
+  
+  <!-- Productos Top Ventas -->
+  <div class="top-sales">
+    <div class="top-sales-header">
+      <span class="top-sales-text">Top ventas</span>
+      <span class="explore-text">Explorar</span>
+    </div>
+    <div class="products">
+      <!-- Productos en venta -->
+      <div class="product-card" *ngFor="let product of products" (click)="openProductDetail(product)">
+        <img [src]="product.image" alt="{{ product.name }}" class="product-img" />
+        <div class="product-info">
+          <p class="product-name">{{ product.name }}</p>
+          <p class="product-price">{{ product.price }}$</p>
+          <div class="heart-icon" (click)="toggleFavorite(product); $event.stopPropagation()" [class.filled]="product.isFavorite"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Notificación de agregado a favoritos, exclusiva para móviles -->
+<div class="notification" *ngIf="notificationVisible">
+  <img src="assets/ventasimg/camisas.png" alt="Imagen del producto" class="product-image" />
+  <span>Agregado a favoritos.</span>
+  <i class="material-icons close-icon" (click)="notificationVisible = false">arrow_forward</i>
+</div>

@@ -1,0 +1,25 @@
+<!-- Superposición de fondo con desenfoque -->
+<div class="background-blur-overlay"></div>
+
+<!-- Contenedor del modal de confirmación de pago -->
+<div class="checkout-modal">
+  <!-- Botón para cerrar el modal -->
+  <button class="close-button" (click)="closeModal()">&#10006;</button>
+  
+  <!-- Contenido del modal -->
+  <div class="modal-content">
+    <!-- Icono de check dentro de un círculo con doble borde -->
+    <div class="check-icon-container">
+      <div class="check-icon">&#10004;</div> <!-- Símbolo de check dentro del contenedor circular -->
+    </div>
+    
+    <!-- Información del pago -->
+    <h2>Pago realizado</h2>
+    <p><strong>Comercio:</strong> Acme S.A</p>
+    <p><strong>Referencia:</strong> FE1658568</p>
+    <p><strong>Total:</strong> $258</p>
+    
+    <!-- Botón para descargar el comprobante -->
+    <button class="download-button" (click)="downloadReceipt()">Descargar comprobante</button>
+  </div>
+</div>

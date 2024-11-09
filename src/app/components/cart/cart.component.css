@@ -1,0 +1,277 @@
+/* Superposición de fondo con desenfoque */
+.background-blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo semitransparente */
+  backdrop-filter: blur(10px); /* Aplica desenfoque solo en el fondo */
+  -webkit-backdrop-filter: blur(10px); /* Prefijo para compatibilidad */
+  z-index: 100; /* Asegura que esté detrás del modal */
+}
+
+/* Contenedor principal para el diseño del carrito */
+.cart-container-horizontal {
+  position: relative;
+  z-index: 200; /* Coloca el modal encima del fondo */
+  display: flex;
+  width: 100%;
+  max-width: 900px; /* Controla el ancho máximo */
+  margin: auto; /* Centra el contenedor en la página */
+  background-color: #F9F9F9;
+  border-radius: 20px; /* Bordes redondeados para un aspecto moderno */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil para elevar el contenedor */
+  font-family: 'Roboto', sans-serif; /* Fuente moderna */
+  padding: 40px 40px 60px 40px; /* Aumenta el padding inferior para darle más espacio */
+}
+
+/* Sección para la lista de productos */
+.cart-products {
+  width: 60%; /* Ocupa el 60% del ancho total */
+  padding: 20px;
+  background-color: #F9F9F9; /* Fondo blanco para los productos */
+}
+
+/* Contenedor del encabezado del carrito */
+.cart-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px 0;
+}
+
+/* Botón de retroceso alineado a la izquierda */
+.back-button {
+  position: absolute;
+  left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateX(-50px);
+  margin-top: -50px; /* Ajusta el valor para subir el texto */
+}
+
+.back-button svg {
+  width: 24px;
+  height: 24px;
+  stroke: #333;
+}
+
+/* Contenedor para centrar el título */
+.cart-title-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 150px; /* Ajusta para mover el contenedor hacia la derecha */
+  margin-top: -50px; /* Ajusta el valor para subir el texto */
+}
+
+/* Título con el ícono de bolsa */
+.cart-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.cart-title svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  stroke: #333;
+}
+
+/* Botón de cerrar alineado a la derecha */
+.close-button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateX(220px);
+  margin-top: -50px; /* Ajusta el valor para subir el texto */
+}
+
+.close-button svg {
+  width: 24px;
+  height: 24px;
+  stroke: #333;
+  
+}
+
+
+/* Estilo para las tarjetas individuales de productos */
+.cart-product {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #F9F9F9; /* Fondo gris claro para cada tarjeta */
+  border-radius: 10px; /* Bordes redondeados para las tarjetas */
+  margin-bottom: 15px; /* Espacio entre tarjetas */
+}
+
+.product-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover; /* Ajusta la imagen al tamaño sin distorsión */
+  margin-right: 15px;
+  border-radius: 8px; /* Bordes ligeramente redondeados para las imágenes */
+}
+
+.product-info {
+  flex-grow: 1; /* Permite que la información del producto ocupe el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-name {
+  font-weight: bold;
+  margin-bottom: 3px;
+  font-size: 1em;
+  color: #333; /* Color oscuro para el nombre del producto */
+}
+
+.product-details {
+  font-size: 0.9em;
+  color: #666; /* Color gris para los detalles del producto */
+}
+
+.product-price-quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1em;
+  color: #333;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+/* Botón de incrementar (+) */
+.quantity-button.increment-button {
+  background-color: #ff7f50; /* Color similar al de la imagen */
+  color: #fff;
+  border-radius: 50%; /* Hace el botón completamente redondo */
+  width: 30px; /* Ajusta el tamaño del botón */
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  margin-left: 10px; /* Espacio a la izquierda del número */
+  cursor: pointer;
+  border: none;
+}
+
+/* Botón de decrementar (-) */
+.quantity-button.decrement-button {
+  background-color: transparent; /* Fondo transparente para el botón de - */
+  color: #333; /* Color oscuro para el texto */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  margin-right: 10px; /* Espacio a la derecha del número */
+  cursor: pointer;
+  border: none;
+}
+
+.quantity {
+  font-weight: bold;
+  font-size: 1em;
+  color: #333;
+  margin: 0 5px; /* Espacio a ambos lados del número */
+}
+
+
+
+/* Botón para agregar más productos */
+.add-more-products-button {
+  display: block;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 10px;
+  background-color: #F9F9F9; /* Color principal */
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Sección del resumen del pedido */
+.order-summary {
+  width: 80%; /* Ocupa el 40% del ancho total */
+  padding: 20px;
+  background-color: #F9F9F9; /* Fondo gris claro para diferenciarlo */
+  border-left: none; /* Separador sutil entre secciones */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(50px); /* Subir */
+}
+
+.order-summary h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Detalles del resumen del pedido */
+.summary-details {
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between; /* Alinea etiqueta y valor en extremos opuestos */
+  margin-bottom: 10px;
+}
+
+.summary-label {
+  font-weight: bold;
+  color: #777; /* Color gris para el texto de la etiqueta */
+}
+
+/* Sección del total en el resumen */
+.total-section {
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #333; /* Color oscuro para resaltar el total */
+}
+
+/* Botón de compra */
+.purchase-button {
+  display: block;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 12px;
+  background-color: #61E27D; /* Color verde para el botón de "Comprar" */
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s; /* Suaviza el cambio de color en hover */
+}
+
+.purchase-button:hover {
+  background-color: #00DD30; /* Color más oscuro al pasar el cursor */
+}

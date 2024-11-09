@@ -1,0 +1,1355 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "User",
+            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "file": "src/stories/user.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "properties": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-46440e9a11facbb086a54e8d9706f4016f32372670780fde74939cab4b88b820fec9da25dc19624a8d8c8c0e1cc9675df697d8422d3aa48c2350c6641607fd29",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterLink"
+                },
+                {
+                    "name": "RouterLinkActive"
+                },
+                {
+                    "name": "RouterOutlet"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css'],\r\n  standalone: true, // Confirmamos que es un componente standalone\r\n  imports: [RouterLink, RouterLinkActive, RouterOutlet] // Agregamos RouterOutlet aquí\r\n})\r\nexport class AppComponent {}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".navbar {\r\n  border-bottom: none;\r\n  background-color: #f0f0f0; /* Mismo color que el fondo para que se camufle */\r\n  box-shadow: none; /* Sin sombra */\r\n  padding-top: 0;\r\n  padding-bottom: 0; \r\n}\r\n\r\n/* Estilo del logo */\r\n.navbar-brand img {\r\n  width: 50px;\r\n  height: 50px;\r\n}\r\n\r\n/* Estilos de los enlaces del navbar */\r\n.nav-link {\r\n  color: #333 !important;\r\n  font-weight: 500;\r\n  margin-right: 1rem;\r\n  position: relative;\r\n  text-decoration: none;\r\n}\r\n\r\n.nav-link:hover {\r\n  color: #00b894 !important; /* Color en hover para resaltar */\r\n}\r\n\r\n/* Subrayado verde en el enlace activo */\r\n.nav-link.active::after {\r\n  content: '';\r\n  position: absolute;\r\n  bottom: 5px;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 4px;\r\n  background-color: #61E27D; /* Color verde */\r\n}",
+                    "styleUrl": "./app.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<nav class=\"navbar navbar-expand-lg bg-light\">\r\n  <div class=\"container\">\r\n    <!-- Logo -->\r\n    <a class=\"navbar-brand\" href=\"#\">\r\n      <img src=\"img/logo.png\" alt=\"Logo\" width=\"30\" height=\"30\" class=\"d-inline-block align-text-top\">\r\n    </a>\r\n    <!-- Menú de navegación -->\r\n    <div class=\"collapse navbar-collapse justify-content-end\">\r\n      <ul class=\"navbar-nav\">\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link\" [routerLink]=\"'/'\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{ exact: true }\">Inicio</a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link\" [routerLink]=\"'/categories'\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{ exact: true }\">Categorías</a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link\" [routerLink]=\"'/cart'\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{ exact: true }\">Bolsa</a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link\" [routerLink]=\"'/profile'\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{ exact: true }\">Perfil</a>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>\r\n\r\n<!-- Aquí es donde se cargan los componentes según la ruta -->\r\n<router-outlet></router-outlet>\r\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-d7bf0323e6da130e2609e2af0117b4a8d7cd874132206af50bf43dfc37044485fe50f2867ea76525730dd195b9b95a43802a12dadc6ad5cd7bf2faa07f19f0da",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": " <button  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nWhat background color to use",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 760,
+                            "end": 773,
+                            "kind": 327,
+                            "id": 0,
+                            "flags": 16842752,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "tagName": {
+                                "pos": 761,
+                                "end": 769,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 37,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nIs this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 21,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nHow large should the button be?",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 29,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nOptional click handler",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 41,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: ` <button\n  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  primary = false;\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n.storybook-button--primary {\n  background-color: #1ea7fd;\n  color: white;\n}\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n.storybook-button--small {\n  padding: 10px 16px;\n  font-size: 12px;\n}\n.storybook-button--medium {\n  padding: 11px 20px;\n  font-size: 14px;\n}\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 43
+                    }
+                }
+            }
+        },
+        {
+            "name": "CartComponent",
+            "id": "component-CartComponent-c1d08b176dda9d038c36d21a2655dbc083a2dda26b1fb59aeee45cbf37cb7be378839a700e97656e484072b7556d0ccf9ba57aa302de3750af3a62460145010d",
+            "file": "src/app/components/cart/cart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-cart",
+            "styleUrls": [
+                "./cart.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./cart.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "cartItems",
+                    "defaultValue": "[\r\n    { name: 'Producto 1', quantity: 2, price: 40 },\r\n    { name: 'Producto 2', quantity: 1, price: 100 }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "checkout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "formatCurrency",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-cart',\r\n  templateUrl: './cart.component.html',\r\n  styleUrls: ['./cart.component.css']\r\n})\r\nexport class CartComponent {\r\n  cartItems = [\r\n    { name: 'Producto 1', quantity: 2, price: 40 },\r\n    { name: 'Producto 2', quantity: 1, price: 100 }\r\n  ];\r\n\r\n  constructor(private router: Router) {}\r\n\r\n  get subtotal() {\r\n    return this.cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);\r\n  }\r\n\r\n  get taxes() {\r\n    return this.subtotal * 0.1; // Ejemplo de 10% de impuestos\r\n  }\r\n\r\n  get total() {\r\n    return this.subtotal + this.taxes;\r\n  }\r\n\r\n  formatCurrency(value: number): string {\r\n    return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'COL' }).format(value);\r\n  }\r\n\r\n  checkout() {\r\n    this.router.navigate(['/checkout']);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".cart {\r\n    max-width: 400px;\r\n    margin: 2rem auto;\r\n    padding: 2rem;\r\n    background-color: #fff;\r\n    border-radius: 8px;\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n  }\r\n  \r\n  .cart-items {\r\n    margin-bottom: 1rem;\r\n  }\r\n  \r\n  .cart-item {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 0.5rem 0;\r\n    border-bottom: 1px solid #ccc;\r\n  }\r\n  \r\n  .summary {\r\n    text-align: right;\r\n    margin-top: 1rem;\r\n  }\r\n  \r\n  button {\r\n    width: 100%;\r\n    padding: 0.75rem;\r\n    background-color: #28a745;\r\n    color: #fff;\r\n    border: none;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n  }\r\n  ",
+                    "styleUrl": "./cart.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "accessors": {
+                "subtotal": {
+                    "name": "subtotal",
+                    "getSignature": {
+                        "name": "subtotal",
+                        "type": "",
+                        "returnType": "",
+                        "line": 17
+                    }
+                },
+                "taxes": {
+                    "name": "taxes",
+                    "getSignature": {
+                        "name": "taxes",
+                        "type": "",
+                        "returnType": "",
+                        "line": 21
+                    }
+                },
+                "total": {
+                    "name": "total",
+                    "getSignature": {
+                        "name": "total",
+                        "type": "",
+                        "returnType": "",
+                        "line": 25
+                    }
+                }
+            },
+            "templateData": "<p>Subtotal: {{ formatCurrency(subtotal) }}</p>\r\n<p>Impuestos: {{ formatCurrency(taxes) }}</p>\r\n<p><strong>Total: {{ formatCurrency(total) }}</strong></p>\r\n"
+        },
+        {
+            "name": "CheckoutComponent",
+            "id": "component-CheckoutComponent-ecea3f37e54ed414386af774c4f5bd13ab7b0156fb3c2acdba9d1effe0751666aca81f5ddc385a8e889928666baf9f65648ac944a3479b805f3849138ceb0c91",
+            "file": "src/app/components/checkout/checkout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-checkout",
+            "styleUrls": [
+                "./checkout.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./checkout.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "total",
+                    "defaultValue": "258",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "downloadReceipt",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "formatCurrency",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-checkout',\r\n  templateUrl: './checkout.component.html',\r\n  styleUrls: ['./checkout.component.css']\r\n})\r\nexport class CheckoutComponent {\r\n  total = 258; // Ejemplo de total del pedido\r\n\r\n  formatCurrency(value: number): string {\r\n    return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(value);\r\n  }\r\n\r\n  downloadReceipt() {\r\n    // Simularemos la descarga creando un archivo de texto\r\n    const receiptContent = `Comprobante de pago\\n\\nTotal: ${this.formatCurrency(this.total)}\\nReferencia: #FGB8456\\nGracias por tu compra.`;\r\n    const blob = new Blob([receiptContent], { type: 'text/plain' });\r\n    const url = window.URL.createObjectURL(blob);\r\n\r\n    const a = document.createElement('a');\r\n    a.href = url;\r\n    a.download = 'comprobante.txt';\r\n    a.click();\r\n\r\n    window.URL.revokeObjectURL(url);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".checkout {\r\n    max-width: 400px;\r\n    margin: 2rem auto;\r\n    padding: 2rem;\r\n    background-color: #fff;\r\n    border-radius: 8px;\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n    text-align: center;\r\n  }\r\n  \r\n  .confirmation-icon {\r\n    font-size: 2rem;\r\n    color: #28a745;\r\n    margin-bottom: 1rem;\r\n  }\r\n  \r\n  h2 {\r\n    margin-bottom: 1rem;\r\n  }\r\n  \r\n  p {\r\n    margin: 0.5rem 0;\r\n  }\r\n  \r\n  button {\r\n    padding: 0.75rem 1.5rem;\r\n    background-color: #28a745;\r\n    color: #fff;\r\n    border: none;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n    margin-top: 1rem;\r\n  }\r\n  ",
+                    "styleUrl": "./checkout.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"checkout\">\r\n    <div class=\"confirmation-icon\">✔️</div>\r\n    <h2>Pago realizado</h2>\r\n    <p>Comercio: <strong>Nombre de la tienda</strong></p>\r\n    <p>Referencia: <strong>#FGB8456</strong></p>\r\n    <p>Total: <strong>{{ formatCurrency(total) }}</strong></p>\r\n    \r\n    <button (click)=\"downloadReceipt()\">Descargar comprobante</button>\r\n  </div>\r\n  "
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-48b9abe37706bc42f20cfa97ed9f943678344ea7d254c0c82183c657750c2191b43486fe730c778627b2ea6aa0e2f33a7abcf3ce08b68ad18b062ad99ea97acb",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 66,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 75,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 69,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 72,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>`,\n  styleUrls: ['./header.css'],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header h1 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 6px 0 6px 10px;\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n}\n\n.storybook-header button + button {\n  margin-left: 10px;\n}\n\n.storybook-header .welcome {\n  margin-right: 10px;\n  color: #333;\n  font-size: 14px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "HomeComponent",
+            "id": "component-HomeComponent-b404ad1a2b92ba28ff38e5f12f90e4b407175000f75649245a3edee72783ff71de4919e76c7a6ed6cf8a671298a100afc8ae17e7b5f7d9c3d93be9568fa72f79",
+            "file": "src/app/components/home/home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./home.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "products",
+                    "defaultValue": "[\r\n    { name: 'Camisas', price: 40, image: 'ventasimg/camisas.png', description: 'Descripción de Camisas', isFavorite: false },\r\n    { name: 'Adidas', price: 300, image: 'ventasimg/adidas.png', description: 'Descripción de Camisas', isFavorite: false },\r\n    { name: 'Camisas', price: 40, image: 'ventasimg/camisas 2.png', description: 'Descripción de Camisas', isFavorite: false },\r\n    { name: 'Adidas', price: 300, image: 'ventasimg/adidas 2.png', description: 'Descripción de Camisas', isFavorite: false },\r\n    { name: 'Nike', price: 300, image: 'ventasimg/nike.png', description: 'Descripción de Camisas', isFavorite: false },\r\n    { name: 'Correas', price: 300, image: 'ventasimg/correas.png', description: 'Descripción de Camisas', isFavorite: false }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "selectedProduct",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "showFavoriteModal",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "openProductDetail",
+                    "args": [
+                        {
+                            "name": "product",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "product",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleFavorite",
+                    "args": [
+                        {
+                            "name": "product",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "product",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgFor"
+                },
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { NgFor } from '@angular/common';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatDialog } from '@angular/material/dialog';\r\nimport { ProductDetailComponent } from '../product-detail/product-detail.component';\r\n\r\n@Component({\r\n  selector: 'app-home',\r\n  standalone: true,\r\n  imports: [NgFor,CommonModule],\r\n  templateUrl: './home.component.html',\r\n  styleUrl: './home.component.css'\r\n})\r\nexport class HomeComponent {\r\n  \r\n  showFavoriteModal: boolean = false;\r\n\r\n  selectedProduct: any;\r\n  products = [\r\n    { name: 'Camisas', price: 40, image: 'ventasimg/camisas.png', description: 'Descripción de Camisas', isFavorite: false },\r\n    { name: 'Adidas', price: 300, image: 'ventasimg/adidas.png', description: 'Descripción de Camisas', isFavorite: false },\r\n    { name: 'Camisas', price: 40, image: 'ventasimg/camisas 2.png', description: 'Descripción de Camisas', isFavorite: false },\r\n    { name: 'Adidas', price: 300, image: 'ventasimg/adidas 2.png', description: 'Descripción de Camisas', isFavorite: false },\r\n    { name: 'Nike', price: 300, image: 'ventasimg/nike.png', description: 'Descripción de Camisas', isFavorite: false },\r\n    { name: 'Correas', price: 300, image: 'ventasimg/correas.png', description: 'Descripción de Camisas', isFavorite: false }\r\n  ];  \r\n\r\n\r\n  constructor(public dialog: MatDialog) {}\r\n  \r\n  openProductDetail(product: any) {\r\n    this.dialog.open(ProductDetailComponent, {\r\n      data: product,\r\n      panelClass: 'custom-dialog-container'\r\n    });\r\n  }\r\n  \r\n  toggleFavorite(product: any) {\r\n    product.isFavorite = !product.isFavorite;\r\n  }\r\n    \r\n    \r\n}\r\n",
+            "styleUrl": "./home.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 26,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<div class=\"container my-5\">\r\n  <!-- Barra de búsqueda -->\r\n  <div class=\"search-container\">\r\n    <h2 class=\"search-title\">¿Qué es lo que estás buscando?</h2>\r\n    <div class=\"search-bar\">\r\n      <input type=\"text\" class=\"search-input\" placeholder=\"Introduce una palabra clave...\" />\r\n      <div class=\"search-icon\">\r\n        <i class=\"bi bi-search\"></i> <!-- Icono de búsqueda -->\r\n      </div>\r\n    </div>\r\n  </div>\r\n  \r\n  <!-- sección de Categorías -->\r\n<div class=\"categories-container\">\r\n  <h3 class=\"categories-title\">Categorías</h3>\r\n  <div class=\"categories\">\r\n    <button class=\"category-btn\">\r\n      <img src=\"icons/ropa.png\" alt=\"Icono de Ropa\" class=\"category-icon\" />\r\n      Ropa\r\n    </button>\r\n    <button class=\"category-btn\">\r\n      <img src=\"icons/deporte.png\" alt=\"Icono de Deporte\" class=\"category-icon\" />\r\n      Deporte\r\n    </button>\r\n    <button class=\"category-btn\">\r\n      <img src=\"icons/juegos.png\" alt=\"Icono de Juegos\" class=\"category-icon\" />\r\n      Juegos\r\n    </button>\r\n    <button class=\"category-btn\">\r\n      <img src=\"icons/regalos.png\" alt=\"Icono de Regalos\" class=\"category-icon\" />\r\n      Regalos\r\n    </button>\r\n    <button class=\"category-btn\">\r\n      <img src=\"icons/maletas.png\" alt=\"Icono de Maletas\" class=\"category-icon\" />\r\n      Maletas\r\n    </button>\r\n    <button class=\"category-btn\">\r\n      <img src=\"icons/navidad.png\" alt=\"Icono de Navidad\" class=\"category-icon\" />\r\n      Navidad\r\n    </button>\r\n    <button class=\"category-btn\">\r\n      <img src=\"icons/gafas.png\" alt=\"Icono de Gafas\" class=\"category-icon\" />\r\n      Gafas\r\n    </button>\r\n  </div>\r\n</div>\r\n  \r\n  <!-- Productos Top Ventas -->\r\n<div class=\"top-sales\">\r\n  <div class=\"top-sales-header\">\r\n    <span class=\"top-sales-text\">Top ventas</span>\r\n    <span class=\"explore-text\">Explorar</span>\r\n  </div>\r\n  <div class=\"products\">\r\n\r\n\r\n     <!-- Aqui colocamos los Productos en venta llamados desde home.components.ts -->\r\n     <div class=\"product-card\" *ngFor=\"let product of products\" (click)=\"openProductDetail(product)\">\r\n      <img [src]=\"product.image\" alt=\"{{ product.name }}\" class=\"product-img\">\r\n      <div class=\"product-info\">\r\n        <p class=\"product-name\">{{ product.name }}</p>\r\n        <p class=\"product-price\">{{ product.price }}$</p>\r\n        <div class=\"heart-icon\" (click)=\"toggleFavorite(product); $event.stopPropagation()\" [class.filled]=\"product.isFavorite\"></div>\r\n      </div>\r\n    </div>\r\n    \r\n</div>\r\n<!-- Panel para información del producto favorito -->\r\n\r\n"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-21dd6eb370b4983b5c21c84d40e6f54d266a9d9af9889e6e76b35c43058bd53b3e451bad089d5adf4bea46647ba10265a2fa8cb15630398e75636307d4817fc6",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 69
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 79,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 75,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 71,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HeaderComponent } from './header.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-page',\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>`,\n  styleUrls: ['./page.css'],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-page {\n  margin: 0 auto;\n  padding: 48px 20px;\n  max-width: 600px;\n  color: #333;\n  font-size: 14px;\n  line-height: 24px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-page h2 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 0 0 4px;\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n}\n\n.storybook-page p {\n  margin: 1em 0;\n}\n\n.storybook-page a {\n  color: #1ea7fd;\n  text-decoration: none;\n}\n\n.storybook-page ul {\n  margin: 1em 0;\n  padding-left: 30px;\n}\n\n.storybook-page li {\n  margin-bottom: 8px;\n}\n\n.storybook-page .tip {\n  display: inline-block;\n  vertical-align: top;\n  margin-right: 10px;\n  border-radius: 1em;\n  background: #e7fdd8;\n  padding: 4px 12px;\n  color: #66bf3c;\n  font-weight: 700;\n  font-size: 11px;\n  line-height: 12px;\n}\n\n.storybook-page .tip-wrapper {\n  margin-top: 40px;\n  margin-bottom: 40px;\n  font-size: 13px;\n  line-height: 20px;\n}\n\n.storybook-page .tip-wrapper svg {\n  display: inline-block;\n  vertical-align: top;\n  margin-top: 3px;\n  margin-right: 4px;\n  width: 12px;\n  height: 12px;\n}\n\n.storybook-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "ProductDetailComponent",
+            "id": "component-ProductDetailComponent-14dd2b209265e57810c23532a276b52e30f7a86afcb907eb55cc4cf6b162832b927a7fa0ef6a428ecbf7b452ac17e7f75ad242e28465a17d5bc5baef7ee12957",
+            "file": "src/app/components/product-detail/product-detail.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-product-detail",
+            "styleUrls": [
+                "./product-detail.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./product-detail.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "decorators": [
+                        {
+                            "name": "Inject",
+                            "stringifiedArguments": "MAT_DIALOG_DATA"
+                        }
+                    ],
+                    "modifierKind": [
+                        170,
+                        125
+                    ]
+                },
+                {
+                    "name": "dialogRef",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialogRef<ProductDetailComponent>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "product",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "selectedSize",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "closeDialog",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "selectSize",
+                    "args": [
+                        {
+                            "name": "size",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "size",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleFavorite",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { Inject } from '@angular/core';\r\nimport { MatDialogRef, MAT_DIALOG_DATA  } from '@angular/material/dialog';\r\n\r\n\r\n@Component({\r\n  selector: 'app-product-detail',\r\n  templateUrl: './product-detail.component.html',\r\n  styleUrls: ['./product-detail.component.css']\r\n})\r\nexport class ProductDetailComponent {\r\n\r\n  product: any;  \r\n  \r\n  constructor(\r\n    public dialogRef: MatDialogRef<ProductDetailComponent>,  // Asegúrate de inyectar MatDialogRef aquí\r\n    @Inject(MAT_DIALOG_DATA) public data: any) {\r\n      this.product = data;\r\n    }\r\n  \r\n   // Método para cerrar el diálogo\r\n   closeDialog(): void {\r\n    this.dialogRef.close();\r\n  }\r\n\r\n  toggleFavorite() {\r\n    this.product.isFavorite = !this.product.isFavorite;\r\n  }\r\n\r\n  selectedSize: string = ''; // Variable para mantener el tamaño seleccionado\r\n\r\n  selectSize(size: string) {\r\n    this.selectedSize = size;\r\n  }\r\n\r\n\r\n\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/* Contenedor del modal */\r\n.modal-content {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.5);\r\n  z-index: 1000;\r\n}\r\n\r\n/* Contenedor principal del modal de producto */\r\n.product-modal {\r\n  display: flex;\r\n  flex-direction: row;\r\n  background: #fff;\r\n  border-radius: 30px;\r\n  overflow: hidden;\r\n  max-width: 876px;\r\n  width: 100%;\r\n  max-height:622px ;\r\n  height: 100%;\r\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n/* Contenedor de la imagen */\r\n.product-image-container {\r\n  position: relative;\r\n  width: 300px; /* Ajustar el tamaño del contenedor de imagen */\r\n  height: 300px;\r\n  overflow: hidden;\r\n  border-radius: 20px;\r\n  top: 50px;\r\n  right: -50px;\r\n}\r\n\r\n.product-img {\r\n  width: 353px;\r\n  height: 397px;\r\n  object-fit: cover;\r\n  border-radius: 15px; /* Bordes redondeados para que se vea como una tarjeta */\r\n}\r\n\r\n/* Ícono del corazón */\r\n.heart-icon {\r\n  position: absolute;\r\n  top: 20px;\r\n  right: 20px;\r\n  width: 40px; /* Tamaño del círculo */\r\n  height: 40px; /* Tamaño del círculo */\r\n  border-radius: 50%;\r\n  background-color: #fff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\r\n  transition: background-color 0.3s;\r\n}\r\n\r\n.heart-icon::before {\r\n  font-family: \"Font Awesome 5 Free\"; /* Usa la fuente de Font Awesome */\r\n  content: \"\\f004\"; /* Código Unicode del icono de corazón */\r\n  font-weight: 900; /* Asegúrate de usar la versión sólida del icono */\r\n  color: #ff6b6b; /* Color del corazón */\r\n  font-size: 20px; /* Ajusta el tamaño del icono */\r\n}\r\n\r\n/* Información sobre la imagen del producto */\r\n.product-info-overlay {\r\n  position: absolute;\r\n  bottom: 15px;\r\n  left: 15px;\r\n  color: white;\r\n  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n.overlay-title {\r\n  font-size: 1.3rem;\r\n  font-weight: bold;\r\n}\r\n\r\n.overlay-price {\r\n  font-size: 1rem;\r\n  margin-top: 0.5rem;\r\n}\r\n\r\n/* Avatares */\r\n.product-avatars {\r\n  display: flex;\r\n  margin-top: 1rem;\r\n}\r\n\r\n.avatar {\r\n  width: 28px;\r\n  height: 28px;\r\n  border-radius: 8px; /* Bordes redondeados */\r\n  border: 2px solid #fff;\r\n  margin-right: 0.5rem;\r\n}\r\n\r\n/* Contenedor de los detalles del producto */\r\n.product-details {\r\n  padding: 2rem;\r\n  width: 60%; /* Ajustar el tamaño de los detalles del producto */\r\n  \r\n}\r\n\r\n/* Título del producto */\r\n.product-title {\r\n  font-size: 1.8rem;\r\n  font-weight: bold;\r\n  margin-bottom: 1rem;\r\n  color: #f87f3d;\r\n  margin-left: 90px; /* Asegúrate de que no haya margen hacia la derecha */\r\n  margin-top: 50px;\r\n}\r\n\r\n/* Opciones del producto */\r\n.product-options {\r\n  margin-bottom: 1.5rem;\r\n  margin-left: 90px; /* Asegúrate de que no haya margen hacia la derecha */\r\n  margin-top: 50px;\r\n}\r\n\r\n/* Botones de talla */\r\n.size-button {\r\n  background: #f5f5f5;\r\n  padding: 0.5rem 1rem;\r\n  margin-right: 0.5rem;\r\n  border-radius: 8px;\r\n  border: none;\r\n  cursor: pointer;\r\n  transition: background 0.3s;\r\n  font-weight: bold;\r\n}\r\n\r\n.size-button.selected {\r\n  background: #61e27d;\r\n  color: #fff;\r\n}\r\n\r\n/* Contenedor del color */\r\n.color-container {\r\n  display: flex;\r\n  align-items: center;\r\n  margin-top: 1rem;\r\n}\r\n\r\n.color-label {\r\n  margin-right: 1rem;\r\n  font-weight: bold;\r\n}\r\n\r\n/* Descripción del producto */\r\n.product-description {\r\n  margin-bottom: 2rem;\r\n  color: #666;\r\n  margin-left: 90px; /* Asegúrate de que no haya margen hacia la derecha */\r\n  margin-top: 50px;\r\n}\r\n\r\n/* Acciones del producto */\r\n.product-actions {\r\n  display: flex;\r\n  gap: 1rem;\r\n}\r\n\r\n/* Botón de cancelar */\r\n.cancel-button {\r\n  background: transparent;\r\n  border: 2px solid #ccc;\r\n  color: #333;\r\n  padding: 0.5rem 1.5rem;\r\n  border-radius: 12px;\r\n  transition: all 0.3s ease;\r\n}\r\n\r\n.cancel-button:hover {\r\n  background: #ccc;\r\n  color: #fff;\r\n}\r\n\r\n/* Botón para agregar al carrito */\r\n.add-to-cart-button {\r\n  background: #61e27d;\r\n  color: #fff;\r\n  padding: 0.5rem 1.5rem;\r\n  border-radius: 12px;\r\n  border: none;\r\n  transition: all 0.3s ease;\r\n}\r\n\r\n.add-to-cart-button:hover {\r\n  background: #4caf50;\r\n}\r\n",
+                    "styleUrl": "./product-detail.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<ProductDetailComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<ProductDetailComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<div class=\"modal-content\">\r\n  <div class=\"product-modal\">\r\n    <!-- Contenedor de la imagen y detalles superpuestos -->\r\n    <div class=\"product-image-container\">\r\n      <img [src]=\"data.image\" alt=\"{{ data.name }}\" class=\"product-img\">\r\n      <!-- Icono de corazón en la parte superior derecha -->\r\n      <div class=\"heart-icon\" (click)=\"toggleFavorite()\">\r\n        <i class=\"fas\" [class.fa-heart]=\"data.isFavorite\" [class.fa-heart-o]=\"!data.isFavorite\"></i>\r\n      </div>\r\n      <!-- Información superpuesta sobre la imagen -->\r\n      <div class=\"product-info-overlay\">\r\n        <p class=\"overlay-title\">{{ data.name }}</p>\r\n        <p class=\"overlay-price\">{{ data.price }}$ / Talla S</p>\r\n        <div class=\"product-avatars\">\r\n          <img src=\"assets/avatars/avatar1.jpg\" alt=\"User 1\" class=\"avatar\">\r\n          <img src=\"assets/avatars/avatar2.jpg\" alt=\"User 2\" class=\"avatar\">\r\n          <div class=\"avatar more-avatars\">6+</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!-- Contenedor de los detalles del producto -->\r\n    <div class=\"product-details\">\r\n      <h1 class=\"product-title\">{{ data.name }}</h1>\r\n      <div class=\"product-options\">\r\n        <span class=\"label\">Talla:  </span>\r\n        <button class=\"size-button\" (click)=\"selectSize('S')\" [class.selected]=\"selectedSize === 'S'\">S</button>\r\n        <button class=\"size-button\" (click)=\"selectSize('M')\" [class.selected]=\"selectedSize === 'M'\">M</button>\r\n        <button class=\"size-button\" (click)=\"selectSize('L')\" [class.selected]=\"selectedSize === 'L'\">L</button>\r\n        <button class=\"size-button\" (click)=\"selectSize('XL')\" [class.selected]=\"selectedSize === 'XL'\">XL</button>\r\n        <div class=\"color-container\">\r\n          <span class=\"color-label\">Color:</span>\r\n          <img src=\"assets/icons/color-palette.png\" alt=\"Color Negro\" class=\"color-icon\">\r\n        </div>\r\n      </div>\r\n      <h3>Descripción</h3>\r\n      <p class=\"product-description\">{{ data.description }}</p>\r\n      <div class=\"product-actions\">\r\n        <button mat-button class=\"cancel-button\" (click)=\"closeDialog()\">Cancelar</button>\r\n        <button mat-button class=\"add-to-cart-button\">Agregar a la bolsa</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css\">"
+        },
+        {
+            "name": "ProfileComponent",
+            "id": "component-ProfileComponent-745e4940d687a26ab4739c44906b61fe27165e29e31813954018a37da17cc9cf3037fdc8ddd383dae64f6b8bb958e1cba3ca2957e84573bb68c923bce428e736",
+            "file": "src/app/components/profile/profile.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-profile",
+            "styleUrls": [
+                "./profile.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./profile.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "goToSection",
+                    "args": [
+                        {
+                            "name": "section",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 9,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "section",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-profile',\r\n  templateUrl: './profile.component.html',\r\n  styleUrls: ['./profile.component.css']\r\n})\r\nexport class ProfileComponent {\r\n  goToSection(section: string) {\r\n    // Simulamos la navegación a una sección del perfil\r\n    console.log(`Navegando a la sección: ${section}`);\r\n    // Aquí podrías implementar una navegación real o mostrar contenido dinámico\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".profile {\r\n    max-width: 400px;\r\n    margin: 2rem auto;\r\n    padding: 2rem;\r\n    background-color: #fff;\r\n    border-radius: 8px;\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n    text-align: center;\r\n  }\r\n  \r\n  .profile-header {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n  }\r\n  \r\n  .profile-image {\r\n    width: 100px;\r\n    height: 100px;\r\n    border-radius: 50%;\r\n    margin-bottom: 1rem;\r\n  }\r\n  \r\n  .profile-options {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.75rem;\r\n    margin-top: 1.5rem;\r\n  }\r\n  \r\n  button {\r\n    padding: 0.75rem 1rem;\r\n    background-color: #eee;\r\n    border: none;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n    transition: background-color 0.2s;\r\n  }\r\n  \r\n  button:hover {\r\n    background-color: #ddd;\r\n  }\r\n  ",
+                    "styleUrl": "./profile.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"profile\">\r\n    <div class=\"profile-header\">\r\n      <img src=\"assets/user-placeholder.png\" alt=\"Foto de perfil\" class=\"profile-image\" />\r\n      <h2>Mi Perfil</h2>\r\n    </div>\r\n  \r\n    <div class=\"profile-options\">\r\n      <button (click)=\"goToSection('favorites')\">Mis Favoritos</button>\r\n      <button (click)=\"goToSection('purchases')\">Mis Compras</button>\r\n      <button (click)=\"goToSection('settings')\">Ajustes de la cuenta</button>\r\n      <button (click)=\"goToSection('support')\">Soporte Técnico</button>\r\n    </div>\r\n  </div>\r\n  "
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration()]\r\n}"
+            },
+            {
+                "name": "bootstrap",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/main.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => bootstrapApplication(AppComponent, config)"
+            },
+            {
+                "name": "config",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
+            },
+            {
+                "name": "routes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.routes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Route[]",
+                "defaultValue": "[\r\n  { path: '', component: HomeComponent },\r\n  /*{ path: 'categories', component: CategoriesComponent },*/\r\n  { path: 'cart', component: CartComponent },\r\n  { path: 'profile', component: ProfileComponent }\r\n]"
+            },
+            {
+                "name": "serverConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering()\r\n  ]\r\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration()]\r\n}"
+                }
+            ],
+            "src/main.server.ts": [
+                {
+                    "name": "bootstrap",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/main.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => bootstrapApplication(AppComponent, config)"
+                }
+            ],
+            "src/app/app.config.server.ts": [
+                {
+                    "name": "config",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
+                },
+                {
+                    "name": "serverConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering()\r\n  ]\r\n}"
+                }
+            ],
+            "src/app/app.routes.ts": [
+                {
+                    "name": "routes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.routes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Route[]",
+                    "defaultValue": "[\r\n  { path: '', component: HomeComponent },\r\n  /*{ path: 'categories', component: CategoriesComponent },*/\r\n  { path: 'cart', component: CartComponent },\r\n  { path: 'profile', component: ProfileComponent }\r\n]"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 5,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "config",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "serverConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.routes.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "routes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/cart/cart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/checkout/checkout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/product-detail/product-detail.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProductDetailComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/profile/profile.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProfileComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/main.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "bootstrap",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/user.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            }
+        ]
+    }
+}

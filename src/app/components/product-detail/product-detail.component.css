@@ -1,0 +1,435 @@
+/* Contenedor del modal */
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px); /* Desenfoque aplicado al fondo */
+  z-index: 1000;
+}
+
+/* Contenedor principal del modal de producto */
+.product-modal {
+  display: flex;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 800px; /* Ajuste del ancho del modal */
+  width: 80%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  align-items: stretch;
+  position: relative; /* Para la correcta posición del botón de cerrar */
+  padding: 20px; /* Añadido para espacio entre el borde del modal y el contenido */
+}
+
+/* Botón de cerrar (la X) */
+.close-button {
+  position: absolute;
+  top: 20px; /* Posiciona la "X" en la parte superior del modal */
+  right: 20px; /* Posiciona la "X" en la parte derecha del modal */
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Contenedor de la imagen */
+.product-image-container {
+  position: relative;
+  width: 280px; /* Ajustar el tamaño del contenedor de imagen */
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+  right: -40px;
+  transform: translateY(30px) translateX(-20px); /* Ajusta los valores */
+  z-index: 2; 
+  top: -15px; /* Ajustar la posición vertical */
+}
+
+.product-img {
+  width: 353px;
+  height: 397px;
+  object-fit: cover;
+  border-radius: 15px; /* Bordes redondeados para que se vea como una tarjeta */
+}
+
+/* Ícono del corazón */
+.heart-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px; /* Tamaño del círculo */
+  height: 40px; /* Tamaño del círculo */
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.heart-icon i {
+  color: #ff6b6b; /* Color del corazón */
+  font-size: 1.5rem; /* Ajusta el tamaño del icono */
+}
+
+/* Información sobre la imagen del producto */
+.product-info-overlay {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-title {
+  font-size: 2.5rem; /* Ajusta el tamaño según necesites */
+  font-weight: bold; 
+  font-family: 'Arial', sans-serif; /* Cambia la fuente a la que desees */
+  transform: translateY(120px) translateX(20px); /* Ajusta los valores */
+}
+
+.overlay-price {
+  font-size: 1rem; /* Ajusta el tamaño según necesites */
+  font-family: 'Arial', sans-serif; /* Cambia la fuente a la que desees */
+  transform: translateY(160px) translateX(20px); /* Ajusta los valores */
+}
+
+.overlay-price span { /* Para que el precio sea más grande */
+  font-size: 2.2rem; /* Ajusta el tamaño del precio */
+}
+
+
+/* Avatares */
+.product-avatars {
+  display: flex;
+  flex-direction: column; /* Cambia la dirección a vertical */
+  align-items: flex-start; /* Alinea los avatares a la izquierda */
+  transform: translate(200px, -90px); 
+  gap: 10px; /* Ajusta el valor para controlar el espacio */
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px; /* Bordes redondeados */
+  border: 2px solid #fff;
+  margin-right: 0.5rem;
+}
+
+.avatar img { /* Selecciona las imágenes dentro de .avatar */
+  width: 100%; 
+  height: 100%;
+  object-fit: none; 
+  object-position: top; /* Centra la imagen en la parte superior */
+}
+
+.avatar.more-avatars {
+  background-image: url("/assets/imgAvatar/avatar3.jpeg"); /* Ruta correcta */
+  background-size: cover; 
+  font-size: 30px; /* Ajusta el tamaño de la fuente */
+}
+
+
+/* Contenedor de los detalles del producto */
+.product-details {
+  padding: 2rem;
+  width: 60%; /* Ajuste el ancho del contenedor de detalles */
+  box-sizing: border-box;
+}
+
+/* Título del producto */
+.product-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #f87f3d;
+}
+
+/* Opciones del producto */
+.product-options {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Botones de talla */
+.size-button {
+  background: #f5f5f5;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: bold;
+  margin-right: -5px; /* Aumentar el espacio entre botones */
+}
+
+.size-button.selected {
+  background: #61e27d;
+  color: #fff;
+}
+
+/* Contenedor del color */
+.color-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.color-button {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.color-label {
+  font-weight: bold;
+}
+
+/* Descripción del producto */
+.product-description {
+  margin-bottom: 2rem;
+  color: #888888;
+}
+
+/* Acciones del producto */
+.product-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center; /* Asegura que los botones estén centrados horizontalmente */
+  margin-top: 5rem; /* Aumenta la distancia con respecto a la descripción */
+  margin-left: -8rem; /* Esto moverá los botones hacia la derecha */
+}
+
+/* Botón de cancelar */
+.cancel-button {
+  background: #FFFFFF; /* Color gris claro de fondo */
+  border: 0.5px solid #000; /* Borde negro */
+  color: #000; /* Texto en negro */
+  padding: 0.75rem 5rem; /* Aumentado el relleno para hacerlo más grande */
+  border-radius: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+  background: #E7E7E7; /* Fondo gris un poco más oscuro al pasar el cursor */
+  color: #000;
+}
+
+/* Botón para agregar al carrito */
+.add-to-cart-button {
+  background: #61E27D; /* Verde claro de fondo (coincidiendo con la imagen de referencia) */
+  color: #fff; /* Texto en blanco */
+  padding: 0.75rem 3rem; /* Aumentado el relleno para hacerlo más grande */
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background: #00DD30; /* Verde un poco más claro al hacer hover */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 576px) {
+  /* Contenedor de la imagen */
+/* Contenedor de la imagen del producto */
+.product-image-container {
+  position: relative;
+  width: 90%; /* Ocupa todo el ancho disponible */
+  transform: translateX(0px); /* Desplaza el contenedor hacia la izquierda */
+  height: auto;
+  border-radius: 20px; /* Bordes redondeados */
+  overflow: visible;
+  margin-bottom: 20px; /* Espacio debajo de la imagen */
+  transform: translateY(20px);
+  transform: translateX(-45px);
+}
+
+/* Imagen del producto */
+.product-img {
+  width: 300px; /* Cambia el ancho de la imagen */
+  height: 400px; /* Cambia el alto de la imagen */
+  object-fit: cover;
+  border-radius: 20px; /* Asegura que la imagen tenga bordes redondeados */
+}
+
+/* Contenido superpuesto en la imagen */
+.overlay-content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Título y precio en la superposición */
+.overlay-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  transform: translateY(-330px);
+}
+
+.overlay-price {
+  font-size: 1.2rem;
+  transform: translateY(-330px);
+}
+
+/* Estilos para los avatares */
+.product-avatars {
+  display: flex;
+  gap: 5px;
+  transform: translate(220px, -630px);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+
+/* Flecha de retroceso */
+.back-arrow {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Ícono del corazón */
+.heart-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateX(-20px);
+}
+
+.heart-icon i {
+  color: #ff6b6b;
+  font-size: 1.5rem;
+}
+
+/* Información superpuesta sobre la imagen */
+.product-info-overlay {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor de detalles del producto */
+.product-details {
+  padding: 1rem;
+}
+
+/* Título y detalles */
+.product-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f87f3d;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Opciones de talla y color */
+.product-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* Botones de talla */
+.size-button {
+  background: #f5f5f5;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.size-button.selected {
+  background: #61e27d;
+  color: #fff;
+}
+
+/* Asegura que el contenedor ocupe el ancho completo */
+.product-actions {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  justify-content: center; /* Alinea el contenido al centro */
+}
+
+/* Ajustes para el botón de agregar a la bolsa */
+.add-to-cart-button {
+  width: 90%; /* Ocupa el 90% del ancho para dejar espacio a los bordes */
+  padding: -1000px 100px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #61E27D;
+  color: white;
+  font-weight: bold;
+  border: none;
+  display: block; /* Asegura que se comporte como un bloque */
+  margin: auto; /* Centra el botón */
+  transform: translate(-180px, -15px); /* Mueve 10px en X y 15px en Y */
+  
+}
+
+.cancel-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+}
+
+

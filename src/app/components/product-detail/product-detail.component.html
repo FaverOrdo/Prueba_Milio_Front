@@ -1,0 +1,47 @@
+<div class="modal-content">
+  <div class="product-modal">
+    <button class="close-button" (click)="closeDialog()">&#10005;</button>
+    <!-- Contenedor de la imagen y detalles superpuestos -->
+    <div class="product-image-container">
+      <img [src]="data.image" alt="{{ data.name }}" class="product-img">
+      <!-- Icono de corazón en la parte superior derecha -->
+      <div class="heart-icon" (click)="toggleFavorite()">
+        <i class="fas" [class.fa-heart]="data.isFavorite" [class.fa-heart-o]="!data.isFavorite"></i>
+      </div>
+      <!-- Información superpuesta sobre la imagen -->
+      <div class="product-info-overlay">
+        <div class="overlay-title">{{ data.name }}</div>
+        <div class="overlay-price"><span>{{ data.price }}$</span> / Talla S</div>
+        <div class="product-avatars">
+          <img src="assets/imgAvatar/avatar1.jpeg" alt="User 1" class="avatar">
+          <img src="assets/imgAvatar/avatar2.jpeg" alt="User 2" class="avatar">
+          <div class="avatar more-avatars">6+</div>
+        </div>
+      </div>
+    </div>
+    <!-- Contenedor de los detalles del producto -->
+    <div class="product-details">
+      <h1 class="product-title">{{ data.name2 }}</h1>
+      <div class="product-options">
+        <span class="label">Talla  </span>
+        <button class="size-button" (click)="selectSize('S')" [class.selected]="selectedSize === 'S'">S</button>
+        <button class="size-button" (click)="selectSize('M')" [class.selected]="selectedSize === 'M'">M</button>
+        <button class="size-button" (click)="selectSize('L')" [class.selected]="selectedSize === 'L'">L</button>
+        <button class="size-button" (click)="selectSize('XL')" [class.selected]="selectedSize === 'XL'">XL</button>
+        <div class="color-container">
+          <button class="color-button">🎨</button>
+          <span class="color-label">Negro</span>
+        </div>
+      </div>
+      <h3>Descripción</h3>
+      <p class="product-description">{{ data.description }}</p>
+      <div class="product-actions">
+        <button mat-button class="cancel-button" (click)="closeDialog()">Cancelar</button>
+        <button mat-button class="add-to-cart-button" (click)="addProductToCart()">Agregar a la bolsa</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
